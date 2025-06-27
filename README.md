@@ -4,15 +4,9 @@ Ainda estou desenvolvendo este repositorio, qualquer coisa pode me chamar no Lin
 
 Esse repositório foi criado com o objetivo de estudar e construir uma arquitetura de dados moderna, seguindo os melhores padrões.
 
-## Arquitetura do Ambiente
+## Stack
 
 ![Arquitetura Modern Data Stack](docs/images/modern-data-stack.png)
-
-### Visão Geral
-
-A arquitetura implementada utiliza um conjunto de tecnologias modernas e open-source para criar um ambiente completo de dados, desde a ingestão até o consumo, com foco em governança, qualidade e observabilidade.
-
-## Stack Tecnológica
 
 ### 🔄 **Data Ingestion**
 - **Apache Flink**: Processamento de streaming em tempo real
