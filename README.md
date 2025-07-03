@@ -77,7 +77,7 @@ data-stack/
   - [ ] Criar módulos Terraform
   - [ ] Setup do MinIO local
   - [ ] Configurar Dremio local
-  - [ ] Setup básico do Airflow
+  - [x] Setup básico do Airflow
 
 - [ ] **Infrastructure as Code**
   - [ ] Criar módulos Terraform para MinIO
