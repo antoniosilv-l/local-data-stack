@@ -1,10 +1,10 @@
-resource "docker_image" "airflow" {
-  name = var.airflow_image
+resource "docker_image" "postgres" {
+  name = var.postgres_image
 }
 
 resource "docker_container" "this" {
   name  = var.container_name
-  image = docker_image.airflow.name
+  image = docker_image.postgres.name
   command = var.command
 
   env = [for k, v in var.common_env : "${k}=${v}"]

@@ -177,3 +177,12 @@ cython_debug/
 # Terraform & Terragrunt
 .terragrunt-*
 .terraform.lock.*
+
+# airflow
+logs/
+*.db
+simple_auth_manager_password*
+airflow.cfg
+
+# postgres
+stack/postgres

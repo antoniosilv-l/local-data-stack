@@ -1,6 +1,6 @@
-variable "airflow_image" {
+variable "postgres_image" {
     type = string
-    default = "apache/airflow:slim-latest-python3.11" 
+    default = "postgres:16.9-alpine3.22" 
 }
 
 variable "container_name" {
@@ -9,6 +9,7 @@ variable "container_name" {
 
 variable "command" {
   type = list(string)
+  default = null
 }
 
 variable "common_env" {

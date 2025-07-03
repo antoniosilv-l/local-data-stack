@@ -1,5 +1,6 @@
 locals {
   airflow_env = {
+    # Configurações do Banco de Dados
     AIRFLOW__DATABASE__SQL_ALCHEMY_CONN = "postgresql+psycopg2://airflow:airflow123@local-data-stack-postgres:5432/airflow"
     
     # Configurações do Core
@@ -18,31 +19,30 @@ locals {
     AIRFLOW__CORE__PARALLELISM        = "32"
     AIRFLOW__CORE__MAX_ACTIVE_RUNS_PER_DAG = "16"
     
-    # Configurações do Webserver
+    # Configurações do API Server
     AIRFLOW__WEBSERVER__EXPOSE_CONFIG = "True"
-    AIRFLOW__WEBSERVER__WORKERS       = "4"
+    AIRFLOW__API__WORKERS             = "4"
   }
-} 
+}
 
 terraform {
   source = "../../../../modules/airflow"
 }
 
 inputs = {
-  container_name = "local-data-stack-airflow-api-server"
+  container_name = "local-data-stack-airflow-init"
   airflow_image  = "local:airflow-latest-python3.11"
-  command        = ["api-server"]
+  command        = [
+    "bash", 
+    "-c",
+    "airflow db migrate"
+  ]
   common_env     = local.airflow_env
-  
-  ports = [
+  volumes = [
     {
-      internal = 8080
-      external = 8080
+      container_path = "/opt/airflow"
+      host_path      = "/home/asilva/_git/projects/local-data-stack/stack/airflow"
     }
   ]
-  
-  volumes = [{
-    container_path = "/opt/airflow"
-    host_path      = "/home/asilva/_git/projects/local-data-stack/stack/airflow"
-  }]
 }
+
