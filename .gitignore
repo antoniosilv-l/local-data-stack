@@ -172,3 +172,17 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+
+# Terraform & Terragrunt
+.terragrunt-*
+.terraform.lock.*
+
+# airflow
+logs/
+*.db
+simple_auth_manager_password*
+airflow.cfg
+
+# postgres
+stack/postgres
