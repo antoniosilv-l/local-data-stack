@@ -4,7 +4,7 @@ Ainda estou desenvolvendo este repositorio, qualquer coisa pode me chamar no Lin
 
 Esse repositório foi criado com o objetivo de estudar e construir uma arquitetura de dados moderna, seguindo os melhores padrões.
 
-## Stack
+## Arquitetura
 
 ![Arquitetura Modern Data Stack](docs/images/modern-data-stack.png)
 
@@ -58,147 +58,19 @@ Esse repositório foi criado com o objetivo de estudar e construir uma arquitetu
 ## Estrutura do Repositório
 
 ```
-data-stack/
+local-data-stack/
 ├── docs/
 │   └── images/           # Diagramas da arquitetura
-├── airflow/              # DAGs do Airflow
-├── dbt/                  # Transformações dbt
-├── infra/                # Infrastructure as Code
-├── docker/               # Containers e docker-compose
-├── tests/                # Testes automatizados
-├── scripts/              # Scripts de setup e utilitários
-└── README.md             # Documentação principal
+├── stack/
+│   ├── airflow/          # DAGs do Airflow
+│   ├── dbt/              # Transformações dbt
+│   ├── infra/            # Infrastructure as Code
+│   ├── docker/           # Containers e docker-compose
+│   ├── tests/            # Testes automatizados
+│   └── scripts/          # Scripts de setup e utilitários
+└── README.md             # Documentação principal             
 ```
 
-## TO DO
+## Referencias
 
-### 📋 **Fase 0: Infraestrutura Base**
-- [ ] **Setup do Ambiente Local**
-  - [ ] Criar módulos Terraform
-  - [ ] Setup do MinIO local
-  - [ ] Configurar Dremio local
-  - [x] Setup básico do Airflow
-
-- [ ] **Infrastructure as Code**
-  - [ ] Criar módulos Terraform para MinIO
-  - [ ] Configurar Terragrunt para ambientes (dev/staging/prod)
-  - [ ] Implementar Terraform para Flink cluster
-
-- [ ] **CI/CD Pipeline**
-  - [ ] Configurar Jenkins pipeline
-  - [ ] Integrar Pre-commit hooks
-  - [ ] Setup do SonarQube para análise de código
-  - [ ] Configurar Checkov para validação de IaC
-  - [ ] Implementar Trivy para scan de vulnerabilidades
-
-### 📋 **Fase 1: Framework**
-- [ ] **Construcao do Framework**
-  - [ ] Organizacao do ambiente/pastas
-  - [ ] Configuracao para extracoes JDBC
-  - [ ] Configuracao para extracoes API
-  - [ ] Configuracao para extracoes Arquivos
-  - [ ] Configuracao para extracoes Streaming
-  - [ ] Inclusao de testes
-  - [ ] Inclusao de datasources
-
-### 📊 **Fase 2: Data Ingestion & Processing**
-- [ ] **Apache Flink**
-  - [ ] Setup do cluster Flink
-  - [ ] Desenvolver framework personalizado de conectores
-  - [ ] Implementar jobs de streaming
-  - [ ] Configurar checkpointing e recovery
-
-- [ ] **Landing Zone (Iceberg)**
-  - [ ] Configurar Apache Iceberg no MinIO
-  - [ ] Implementar particionamento inteligente
-  - [ ] Setup de compactação automática
-  - [ ] Configurar schema evolution
-
-- [ ] **Apache Airflow**
-  - [ ] Criar DAGs para orquestração
-  - [ ] Implementar sensores para dados
-  - [ ] Configurar alertas e monitoramento
-  - [ ] Setup de retry policies
-
-### 🔄 **Fase 3: Data Transformation**
-- [ ] **dbt Implementation**
-  - [ ] Setup do projeto dbt
-  - [ ] Implementar Data Vault (Hubs, Links, Satellites)
-  - [ ] Desenvolver Business Vault
-  - [ ] Criar Information Schema (OBT + Star Schema)
-  - [ ] Implementar testes de qualidade
-  - [ ] Configurar documentação automática
-
-- [ ] **Great Expectations**
-  - [ ] Setup do framework de qualidade
-  - [ ] Criar expectativas para cada camada
-  - [ ] Integrar com Airflow
-  - [ ] Configurar alertas de qualidade
-
-### 📈 **Fase 4: Governança & Monitoring**
-- [ ] **OpenLineage**
-  - [ ] Integrar com Airflow
-  - [ ] Configurar tracking do dbt
-  - [ ] Implementar lineage do Flink
-  - [ ] Setup de visualização
-
-- [ ] **OpenMetadata**
-  - [ ] Setup do catálogo de dados
-  - [ ] Configurar descoberta automática
-  - [ ] Implementar classificação de dados
-  - [ ] Setup de políticas de acesso
-
-- [ ] **Observabilidade**
-  - [ ] Implementar OpenTelemetry
-  - [ ] Configurar Prometheus para métricas
-  - [ ] Setup do Grafana com dashboards
-  - [ ] Configurar alertas inteligentes
-
-### 🎯 **Fase 5: Data Consumption**
-- [ ] **APIs & Services**
-  - [ ] Desenvolver APIs FastAPI
-  - [ ] Integrar com Dremio
-  - [ ] Implementar autenticação/autorização
-  - [ ] Setup de rate limiting
-
-- [ ] **Business Intelligence**
-  - [ ] Configurar Metabase
-  - [ ] Criar dashboards padrão
-  - [ ] Setup de self-service analytics
-
-### 🔒 **Fase 6: Segurança & Compliance**
-- [ ] **Segurança**
-  - [ ] Implementar encryption at rest/transit
-  - [ ] Configurar RBAC no Dremio
-  - [ ] Setup de auditoria
-  - [ ] Implementar data masking
-
-- [ ] **Compliance**
-  - [ ] Implementar LGPD compliance
-  - [ ] Setup de data retention policies
-  - [ ] Configurar right to be forgotten
-  - [ ] Documentar data lineage para compliance
-
-### 🧪 **Fase 7: Testes & Qualidade**
-- [ ] **Testing Strategy**
-  - [ ] Implementar unit tests (Pytest)
-  - [ ] Criar integration tests
-  - [ ] Setup de performance tests
-  - [ ] Implementar data quality tests
-
-- [ ] **Automação**
-  - [ ] Configurar deploy automático
-  - [ ] Setup de rollback automático
-  - [ ] Implementar feature flags
-  - [ ] Configurar blue-green deployment
-
-### 📚 **Fase 8: Documentação**
-- [ ] **Documentação**
-  - [ ] Documentar APIs
-  - [ ] Documentar processos operacionais
-  - [ ] Setup de knowledge base
-
-- [ ] **Capacitação**
-  - [ ] Documentar best practices
-  - [ ] Setup de sandbox environment
-
+- https://registry.terraform.io/providers/kreuzwerker/docker/latest/docs
