@@ -8,7 +8,7 @@ locals {
 }
 
 terraform {
-  source = "../../../modules/container"
+  source = "../../../../modules/container"
 }
 
 inputs = {
@@ -39,7 +39,7 @@ inputs = {
         retries      = 3
     }
   
-    # Portas
+    # Mapeamento de portas
     ports = [
         {
             internal = 9000
